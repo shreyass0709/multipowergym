@@ -1,0 +1,182 @@
+// Multi Power Gym Navunda — database schema
+// Postgres + Prisma. Run `npx prisma migrate dev` after setting DATABASE_URL.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum UserStatus {
+  PENDING_ACTIVATION // created by admin, member has not set a password yet
+  ACTIVE
+}
+
+enum MembershipStatus {
+  ACTIVE
+  EXPIRING // within the reminder window (7/3/1 days)
+  EXPIRED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+}
+
+enum PaymentMethod {
+  ONLINE // Razorpay
+  CASH // recorded manually by admin
+}
+
+model User {
+  id           String     @id @default(cuid())
+  name         String
+  email        String     @unique
+  phone        String?    @unique
+  passwordHash String? // null until the member activates via OTP
+  role         Role       @default(USER)
+  status       UserStatus @default(PENDING_ACTIVATION)
+
+  // OTP-based activation / password reset
+  otpCode    String?
+  otpExpires DateTime?
+
+  memberships   Membership[]
+  notifications Notification[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([phone])
+}
+
+model Plan {
+  id           String       @id @default(cuid())
+  name         String
+  description  String?
+  price        Int // in paise (₹1 = 100) to avoid float issues
+  durationDays Int
+  features     String[]
+  isActive     Boolean      @default(true)
+  memberships  Membership[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Membership {
+  id        String           @id @default(cuid())
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  plan      Plan             @relation(fields: [planId], references: [id])
+  planId    String
+  startDate DateTime         @default(now())
+  endDate   DateTime
+  status    MembershipStatus @default(ACTIVE)
+  payments  Payment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([endDate])
+  @@index([status])
+}
+
+model Payment {
+  id           String        @id @default(cuid())
+  membership   Membership    @relation(fields: [membershipId], references: [id], onDelete: Cascade)
+  membershipId String
+  amount       Int // paise
+  method       PaymentMethod @default(ONLINE)
+  status       PaymentStatus @default(PENDING)
+
+  // Razorpay references
+  providerOrderId   String?
+  providerPaymentId String?
+  invoiceUrl        String?
+  note              String?
+
+  paidAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([membershipId])
+}
+
+model Machine {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+  category    String?
+  imageUrl    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model WorkoutPlan {
+  id          String  @id @default(cuid())
+  title       String
+  goal        String? // e.g. "Weight loss", "Muscle gain"
+  level       String? // Beginner / Intermediate / Advanced
+  description String?
+  imageUrl    String?
+  pdfUrl      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GalleryImage {
+  id       String  @id @default(cuid())
+  url      String
+  caption  String?
+  album    String? // group photos into albums
+
+  uploadedAt DateTime @default(now())
+}
+
+model Trainer {
+  id        String  @id @default(cuid())
+  name      String
+  specialty String?
+  bio       String?
+  imageUrl  String?
+
+  createdAt DateTime @default(now())
+}
+
+model Enquiry {
+  id      String  @id @default(cuid())
+  name    String
+  email   String?
+  phone   String?
+  message String
+  status  String  @default("NEW") // NEW / CONTACTED / CLOSED
+
+  createdAt DateTime @default(now())
+}
+
+model Notification {
+  id      String  @id @default(cuid())
+  user    User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId  String?
+  type    String // e.g. "EXPIRY_REMINDER", "OTP", "WELCOME"
+  channel String // "EMAIL" | "SMS" | "WHATSAPP" | "IN_APP"
+  message String
+  read    Boolean @default(false)
+
+  sentAt    DateTime @default(now())
+
+  @@index([userId])
+}
