@@ -137,8 +137,8 @@ export default function HomePage() {
               {/* TRANSPARENT 3D ATHLETE CUT-OUT (No square card, no borders, no timing badge) */}
               <div className="relative w-full max-w-xl h-[550px] sm:h-[680px] z-20 flex justify-center group">
                 <Image
-                  src="/hero-athlete.png"
-                  alt="FitFusion 3D Cutout Athlete"
+                  src="/hero-athlete-biceps.png"
+                  alt="FitFusion Front Double Biceps Athlete"
                   fill
                   priority
                   className="object-contain object-bottom filter contrast-125 brightness-105 drop-shadow-[0_0_50px_rgba(198,255,0,0.4)] group-hover:scale-105 transition-transform duration-700"
