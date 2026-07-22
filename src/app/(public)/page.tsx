@@ -128,41 +128,21 @@ export default function HomePage() {
 
             </div>
 
-            {/* RIGHT SIDE (55% -> 7 cols desktop) HERO IMAGE WITH 3D HEAD POP-OUT EFFECT */}
-            <div className="lg:col-span-7 relative flex items-center justify-center pt-16 sm:pt-24 lg:pt-28">
+            {/* RIGHT SIDE (55% -> 7 cols desktop) CLEAN TRANSPARENT ATHLETE CUT-OUT */}
+            <div className="lg:col-span-7 relative flex items-center justify-center min-h-[550px] sm:min-h-[680px]">
               
-              {/* Volumetric Neon Glow Aura behind athlete's head & shoulders */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-80 h-80 sm:w-96 sm:h-96 bg-[#C6FF00]/30 rounded-full blur-[120px] pointer-events-none z-0" />
+              {/* Volumetric Neon Backlight Glow directly behind athlete's body */}
+              <div className="absolute inset-0 bg-[#C6FF00]/20 rounded-full blur-[140px] pointer-events-none z-0" />
 
-              {/* Main Container Card (Dark Glass Frame Box) */}
-              <div className="relative w-full max-w-xl bg-[#0d0d0d] border border-white/10 rounded-3xl p-4 sm:p-6 shadow-2xl">
-                
-                {/* POP-OUT ATHLETE IMAGE: Head extends ABOVE the top border of container card! */}
-                <div className="relative w-full h-[540px] sm:h-[650px] -mt-20 sm:-mt-32 z-20 overflow-visible flex justify-center group">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/hero-athlete.jpg"
-                      alt="FitFusion 3D Pop Athlete"
-                      fill
-                      priority
-                      className="object-cover object-top filter contrast-125 brightness-110 saturate-110 drop-shadow-[0_-20px_45px_rgba(198,255,0,0.35)] group-hover:scale-105 transition-transform duration-700"
-                    />
-                    
-                    {/* Dark gradient mask fading background gym clutter while keeping body 3D highlighted */}
-                    <div className="absolute inset-0 bg-radial from-transparent via-[#0d0d0d]/30 to-[#0d0d0d] pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0d0d0d] to-transparent pointer-events-none z-30" />
-                  </div>
-                </div>
-
-                {/* Status Badge at bottom of container card */}
-                <div className="absolute bottom-6 right-6 z-30 glass-card px-4 py-2 flex items-center gap-2.5 border border-[#C6FF00]/40 shadow-xl bg-black/60">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6FF00] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#C6FF00]"></span>
-                  </span>
-                  <span className="text-xs font-black text-[#C6FF00] tracking-wider uppercase">Open 5 AM - 11 PM</span>
-                </div>
-
+              {/* TRANSPARENT 3D ATHLETE CUT-OUT (No square card, no borders, no timing badge) */}
+              <div className="relative w-full max-w-xl h-[550px] sm:h-[680px] z-20 flex justify-center group">
+                <Image
+                  src="/hero-athlete.png"
+                  alt="FitFusion 3D Cutout Athlete"
+                  fill
+                  priority
+                  className="object-contain object-bottom filter contrast-125 brightness-105 drop-shadow-[0_0_50px_rgba(198,255,0,0.4)] group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
 
             </div>
