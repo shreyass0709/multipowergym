@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Dumbbell, Menu, X, Zap } from "lucide-react";
 
 const navLinks = [
@@ -43,19 +44,21 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-[#101010] border border-white/10 group-hover:border-[#C6FF00]/50 transition-colors">
-            <Dumbbell className="h-5 w-5 text-[#C6FF00] group-hover:rotate-12 transition-transform duration-300" />
-            <span className="absolute -top-1 -right-1 flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6FF00] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#C6FF00]"></span>
-            </span>
+          <div className="relative flex items-center justify-center">
+            <Image
+              src="/logo.png"
+              alt="Multi Power Gym Navunda Logo"
+              width={48}
+              height={48}
+              className="h-12 w-12 object-contain rounded-full border border-[#C6FF00]/40 group-hover:border-[#C6FF00] group-hover:scale-105 transition-all shadow-[0_0_15px_rgba(198,255,0,0.3)]"
+            />
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-extrabold tracking-tight text-white group-hover:text-[#C6FF00] transition-colors">
               Fit<span className="text-[#C6FF00]">Fusion</span>
             </span>
             <span className="text-[10px] font-bold tracking-widest text-[#A0A0A0] uppercase -mt-1">
-              Multi Power Gym
+              Multi Power Gym Navunda
             </span>
           </div>
         </Link>

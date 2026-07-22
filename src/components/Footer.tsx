@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Dumbbell, Send, ShieldCheck, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -10,15 +11,19 @@ export default function Footer() {
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#101010] border border-white/10 group-hover:border-[#C6FF00]/50 transition-colors">
-                <Dumbbell className="h-5 w-5 text-[#C6FF00]" />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Multi Power Gym Navunda Logo"
+                width={52}
+                height={52}
+                className="h-13 w-13 object-contain rounded-full border border-[#C6FF00]/40 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(198,255,0,0.3)]"
+              />
               <div className="flex flex-col">
                 <span className="text-2xl font-extrabold tracking-tight text-white">
                   Fit<span className="text-[#C6FF00]">Fusion</span>
                 </span>
                 <span className="text-[10px] font-bold tracking-widest text-[#A0A0A0] uppercase -mt-1">
-                  Multi Power Gym
+                  Multi Power Gym Navunda
                 </span>
               </div>
             </Link>
