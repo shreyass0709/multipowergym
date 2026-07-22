@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Multi Power Gym Navunda",
-    template: "%s | Multi Power Gym Navunda",
+    default: "FitFusion | Multi Power Gym — Premium Luxury Fitness",
+    template: "%s | FitFusion Multi Power Gym",
   },
   description:
-    "Multi Power Gym Navunda — modern equipment, expert workout plans, and flexible membership plans. Join the strongest community in Navunda.",
+    "Sculpt your body and elevate your spirit at FitFusion Multi Power Gym. Featuring state-of-the-art equipment, certified master trainers, custom workout plans, and elite facilities.",
 };
 
 export default function RootLayout({
@@ -29,9 +29,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#050505] text-white selection:bg-[#C6FF00] selection:text-black">
+        {children}
+      </body>
     </html>
   );
 }
