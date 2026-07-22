@@ -128,68 +128,26 @@ export default function HomePage() {
 
             </div>
 
-            {/* RIGHT SIDE (55% -> 7 cols desktop) HERO IMAGE WITH FLOATING CARDS */}
-            <div className="lg:col-span-7 relative flex items-center justify-center min-h-[520px] sm:min-h-[640px]">
+            {/* RIGHT SIDE (55% -> 7 cols desktop) HERO IMAGE WITH 3D POP & BODY HIGHLIGHT */}
+            <div className="lg:col-span-7 relative flex items-center justify-center min-h-[540px] sm:min-h-[660px] group">
               
-              {/* Athlete Image Container with Edge Vignette Masking */}
-              <div className="relative w-full max-w-xl h-[520px] sm:h-[620px] rounded-3xl overflow-hidden shadow-2xl">
+              {/* Volumetric Neon Glow Aura behind the athlete for 3D depth pop */}
+              <div className="absolute inset-0 bg-[#C6FF00]/20 rounded-full blur-[130px] pointer-events-none group-hover:bg-[#C6FF00]/30 transition-all duration-700" />
+
+              {/* Athlete Image Container with 3D Depth Frame */}
+              <div className="relative w-full max-w-xl h-[540px] sm:h-[660px] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.9)] border border-white/10 group-hover:border-[#C6FF00]/40 transition-all duration-700">
                 <Image
                   src="/hero-athlete.jpg"
-                  alt="FitFusion Athlete - Sculpted Body"
+                  alt="FitFusion Sculpted Athlete"
                   fill
                   priority
-                  className="object-cover object-center filter brightness-95 contrast-105"
+                  className="object-cover object-top filter contrast-125 brightness-105 saturate-110 drop-shadow-[0_0_40px_rgba(198,255,0,0.3)] group-hover:scale-105 transition-transform duration-700"
                 />
                 
-                {/* Radial and Linear Gradient Overlays for Natural Blend into #050505 */}
-                <div className="absolute inset-0 bg-radial from-transparent via-[#050505]/40 to-[#050505]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/40" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]/60" />
-              </div>
-
-              {/* Floating Card 1: 50+ Gym Machines (Top Left) */}
-              <div className="absolute -top-4 left-2 sm:left-4 z-20 glass-card px-4 py-3 flex items-center gap-3 animate-float-slow shadow-xl">
-                <div className="h-10 w-10 rounded-xl bg-[#C6FF00]/10 border border-[#C6FF00]/30 flex items-center justify-center text-xl">
-                  🏋️
-                </div>
-                <div>
-                  <div className="text-lg font-black text-white leading-none">50+</div>
-                  <div className="text-[11px] font-bold text-[#A0A0A0]">Gym Machines</div>
-                </div>
-              </div>
-
-              {/* Floating Card 2: 20+ Trainers (Middle Left) */}
-              <div className="absolute top-1/3 -left-4 sm:left-0 z-20 glass-card px-4 py-3 flex items-center gap-3 animate-float-reverse shadow-xl">
-                <div className="h-10 w-10 rounded-xl bg-[#C6FF00]/10 border border-[#C6FF00]/30 flex items-center justify-center text-xl">
-                  💪
-                </div>
-                <div>
-                  <div className="text-lg font-black text-white leading-none">20+</div>
-                  <div className="text-[11px] font-bold text-[#A0A0A0]">Pro Trainers</div>
-                </div>
-              </div>
-
-              {/* Floating Card 3: 500+ Active Members (Middle Right) */}
-              <div className="absolute top-1/4 -right-2 sm:right-2 z-20 glass-card px-4 py-3 flex items-center gap-3 animate-float-slow shadow-xl">
-                <div className="h-10 w-10 rounded-xl bg-[#C6FF00]/10 border border-[#C6FF00]/30 flex items-center justify-center text-xl">
-                  🔥
-                </div>
-                <div>
-                  <div className="text-lg font-black text-[#C6FF00] leading-none">500+</div>
-                  <div className="text-[11px] font-bold text-white">Active Members</div>
-                </div>
-              </div>
-
-              {/* Floating Card 4: Open Hours (Bottom Right) */}
-              <div className="absolute bottom-6 right-4 sm:right-8 z-20 glass-card px-5 py-3 flex items-center gap-3 animate-float-reverse shadow-xl">
-                <div className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6FF00] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#C6FF00]"></span>
-                </div>
-                <div>
-                  <div className="text-xs font-extrabold text-white uppercase tracking-wider">Open Daily</div>
-                  <div className="text-xs font-black text-[#C6FF00]">5:00 AM - 11:00 PM</div>
-                </div>
+                {/* Radial and Edge Gradient Masks to isolate and pop the body */}
+                <div className="absolute inset-0 bg-radial from-transparent via-[#050505]/20 to-[#050505] pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/40 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]/50 pointer-events-none" />
               </div>
 
             </div>
