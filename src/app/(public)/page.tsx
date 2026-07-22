@@ -38,19 +38,39 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen bg-[#050505] text-white selection:bg-[#C6FF00] selection:text-black overflow-x-hidden">
       
       {/* ================================================================================= */}
-      {/* SECTION 1: HERO SECTION (SPLIT LAYOUT) */}
+      {/* SECTION 1: HERO SECTION (FINE-TUNED COMMERCIAL LUXURY FITNESS) */}
       {/* ================================================================================= */}
-      <section className="relative min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[90vh] lg:min-h-screen w-full pt-28 pb-16 lg:pt-36 lg:pb-24 flex items-center overflow-hidden bg-[#050505]">
         
-        {/* Background Volumetric Glows */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#C6FF00]/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#C6FF00]/5 rounded-full blur-[180px] pointer-events-none" />
+        {/* HERO GYM BACKDROP LAYER (Silhouette equipment darkened, center bars illuminated, ambient neon haze) */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <Image
+            src="/hero-bg-custom.png"
+            alt="Luxury Dark Gym Hero Background"
+            fill
+            priority
+            className="object-cover object-right lg:object-center filter brightness-[0.72] contrast-125 saturate-[0.80]"
+          />
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Pure #050505 Black Left Column + Soft Radial Transition into Gym Background */}
+          <div className="absolute inset-y-0 left-0 w-full md:w-3/5 lg:w-[48%] bg-gradient-to-r from-[#050505] via-[#050505] to-transparent z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,_#050505_38%,_transparent_72%)] z-10 pointer-events-none" />
+
+          {/* Focused Cinematic Overhead Spotlight Beam Perfectly Aligned Over Bodybuilder's Head (Moved ~90px Right) */}
+          <div className="absolute top-0 right-[6%] lg:right-[10%] w-[320px] h-[460px] bg-gradient-to-b from-[#C6FF00]/26 via-[#C6FF00]/6 to-transparent blur-2xl z-10" />
+
+          {/* Floating Dust Particles inside the Spotlight Beam */}
+          <div className="absolute top-12 right-[8%] lg:right-[12%] w-[160px] h-60 bg-[radial-gradient(#C6FF00_1.5px,transparent_1.5px)] [background-size:14px_14px] opacity-30 blur-[0.5px] pointer-events-none z-10" />
+
+          {/* Floor Level Smoke & Haze Transition into pitch black #050505 */}
+          <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent z-15" />
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full relative z-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[500px] lg:min-h-[640px]">
             
-            {/* LEFT SIDE (45% -> 5 cols desktop) */}
-            <div className="lg:col-span-5 flex flex-col gap-6 text-left">
+            {/* LEFT COLUMN (45% Width -> 5 Cols Desktop: Pure #050505 Black Background) */}
+            <div className="lg:col-span-5 flex flex-col gap-6 text-left z-30">
               
               {/* Kicker Tag */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#101010] border border-white/10 w-fit">
@@ -63,12 +83,12 @@ export default function HomePage() {
               {/* Large Display Heading */}
               <h1 className="text-4xl sm:text-6xl lg:text-6xl font-black tracking-tight leading-[1.08] text-white">
                 Sculpt{" "}
-                <span className="text-[#C6FF00] drop-shadow-[0_0_25px_rgba(198,255,0,0.4)]">
+                <span className="text-[#C6FF00] drop-shadow-[0_0_10px_rgba(198,255,0,0.20)]">
                   YOUR BODY
                 </span>
                 ,<br />
                 Elevate{" "}
-                <span className="text-[#C6FF00] drop-shadow-[0_0_25px_rgba(198,255,0,0.4)]">
+                <span className="text-[#C6FF00] drop-shadow-[0_0_10px_rgba(198,255,0,0.20)]">
                   YOUR SPIRIT
                 </span>
                 .
@@ -128,20 +148,29 @@ export default function HomePage() {
 
             </div>
 
-            {/* RIGHT SIDE (55% -> 7 cols desktop) CLEAN TRANSPARENT ATHLETE CUT-OUT */}
-            <div className="lg:col-span-7 relative flex items-center justify-center min-h-[550px] sm:min-h-[680px]">
+            {/* RIGHT COLUMN: BODYBUILDER SIZE INCREASED 6%, MOVED 30px UPWARD, PERFECT SPOTLIGHT ALIGNMENT */}
+            <div className="lg:col-span-7 relative flex items-end justify-center h-[520px] sm:h-[600px] lg:h-[660px] z-20 group">
               
-              {/* Volumetric Neon Backlight Glow directly behind athlete's body */}
-              <div className="absolute inset-0 bg-[#C6FF00]/20 rounded-full blur-[140px] pointer-events-none z-0" />
+              {/* Soft Ambient Neon Glow behind bodybuilder */}
+              <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-80 h-80 sm:w-[380px] sm:h-[380px] bg-[#C6FF00]/12 rounded-full blur-[140px] pointer-events-none z-0" />
 
-              {/* TRANSPARENT 3D ATHLETE CUT-OUT (No square card, no borders, no timing badge) */}
-              <div className="relative w-full max-w-xl h-[550px] sm:h-[680px] z-20 flex justify-center group">
+              {/* Realistic Contact Shadow beneath feet */}
+              <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-1/2 translate-x-4 sm:translate-x-8 lg:translate-x-10 w-72 h-6 bg-black/95 blur-md rounded-full pointer-events-none z-10" />
+              
+              {/* Floor Level Haze near feet */}
+              <div className="absolute bottom-8 sm:bottom-10 lg:bottom-12 left-1/2 translate-x-4 sm:translate-x-8 lg:translate-x-10 w-80 h-10 bg-gradient-to-t from-[#C6FF00]/6 via-black/30 to-transparent blur-md pointer-events-none z-15" />
+
+              {/* Subtle Wet Floor Reflection Glow */}
+              <div className="absolute bottom-5 sm:bottom-7 lg:bottom-9 left-1/2 translate-x-4 sm:translate-x-8 lg:translate-x-10 w-64 h-3 bg-[#C6FF00]/8 blur-xl rounded-full pointer-events-none z-10" />
+
+              {/* BODYBUILDER TRANSPARENT PNG (Shifted slightly downward for sweet-spot spotlight alignment) */}
+              <div className="relative w-full h-[96%] max-w-lg sm:max-w-xl z-20 flex items-end justify-center translate-x-4 sm:translate-x-8 lg:translate-x-10 -translate-y-6 sm:-translate-y-8 lg:-translate-y-10">
                 <Image
                   src="/hero-athlete-biceps.png"
-                  alt="FitFusion Front Double Biceps Athlete"
+                  alt="FitFusion Bodybuilder Athlete Standing in Gym"
                   fill
                   priority
-                  className="object-contain object-bottom filter contrast-125 brightness-105 drop-shadow-[0_0_50px_rgba(198,255,0,0.4)] group-hover:scale-105 transition-transform duration-700"
+                  className="object-contain object-bottom filter brightness-[0.82] saturate-[0.88] contrast-115 drop-shadow-[0_0_22px_rgba(198,255,0,0.26)] group-hover:scale-[1.02] transition-transform duration-700"
                 />
               </div>
 
