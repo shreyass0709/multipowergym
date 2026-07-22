@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | FitFusion Multi Power Gym",
   },
   description:
-    "Sculpt your body and elevate your spirit at FitFusion Multi Power Gym. Featuring state-of-the-art equipment, certified master trainers, custom workout plans, and elite facilities.",
+    "Sculpt your body and elevate your spirit at FitFusion Multi Power Gym. Featuring state-of-the-art equipment, certified master trainers, custom workout plans, and elite training zones.",
 };
 
 export default function RootLayout({

@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#memberships", label: "Membership" },
-  { href: "#facilities", label: "Facilities" },
   { href: "#equipment", label: "Equipment" },
   { href: "#workout-plans", label: "Workout Plans" },
   { href: "#gallery", label: "Gallery" },
