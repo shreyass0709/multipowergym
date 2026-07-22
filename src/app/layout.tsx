@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "FitFusion | Multi Power Gym — Premium Luxury Fitness",
-    template: "%s | FitFusion Multi Power Gym",
+    default: "Multi Power Gym Navunda — The Real Way of Fitness",
+    template: "%s | Multi Power Gym Navunda",
   },
   description:
-    "Sculpt your body and elevate your spirit at FitFusion Multi Power Gym. Featuring state-of-the-art equipment, certified master trainers, custom workout plans, and elite training zones.",
+    "Sculpt your body and elevate your spirit at Multi Power Gym Navunda. Featuring state-of-the-art equipment, certified master trainers, master personal coaching, and elite training zones.",
 };
 
 export default function RootLayout({

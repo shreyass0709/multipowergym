@@ -29,7 +29,7 @@ export default function ContactPage() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={18} className="mt-0.5 shrink-0 text-brand" />
-                <span className="text-muted">+91 00000 00000</span>
+                <a href="tel:+918296931409" className="text-muted hover:text-brand font-mono transition-colors">+91 82969 31409</a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="mt-0.5 shrink-0 text-brand" />
@@ -38,9 +38,9 @@ export default function ContactPage() {
               <li className="flex items-start gap-3">
                 <Clock size={18} className="mt-0.5 shrink-0 text-brand" />
                 <span className="text-muted">
-                  Monday – Saturday, 6:00 AM – 10:00 PM
+                  Morning: 6:00 AM – 10:00 AM
                   <br />
-                  Sunday, 7:00 AM – 12:00 PM
+                  Afternoon: 4:00 PM – 9:00 PM
                 </span>
               </li>
             </ul>

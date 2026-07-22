@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#050505] border-t border-white/10 pt-20 pb-10 text-[#A0A0A0]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/5">
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 flex flex-col gap-6">
@@ -20,16 +20,16 @@ export default function Footer() {
               />
               <div className="flex flex-col">
                 <span className="text-2xl font-extrabold tracking-tight text-white">
-                  Fit<span className="text-[#C6FF00]">Fusion</span>
+                  Multi<span className="text-[#C6FF00]">Power</span> Gym
                 </span>
                 <span className="text-[10px] font-bold tracking-widest text-[#A0A0A0] uppercase -mt-1">
-                  Multi Power Gym Navunda
+                  Navunda
                 </span>
               </div>
             </Link>
             
             <p className="text-sm leading-relaxed text-[#A0A0A0] max-w-sm">
-              Sculpt your body and elevate your spirit. FitFusion delivers elite fitness experiences with state-of-the-art machinery, master trainers, and custom athletic conditioning.
+              Sculpt your body and elevate your spirit. Multi Power Gym Navunda delivers elite fitness experiences with state-of-the-art machinery, master trainers, and custom athletic conditioning.
             </p>
 
             {/* Newsletter Input */}
@@ -63,21 +63,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Programs */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-xs font-extrabold uppercase tracking-widest text-white">
-              Programs
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm font-medium">
-              <li><Link href="#workout-plans" className="hover:text-[#C6FF00] transition-colors">Weight Loss & Shred</Link></li>
-              <li><Link href="#workout-plans" className="hover:text-[#C6FF00] transition-colors">Hypertrophy Gain</Link></li>
-              <li><Link href="#workout-plans" className="hover:text-[#C6FF00] transition-colors">Pure Powerlifting</Link></li>
-              <li><Link href="#workout-plans" className="hover:text-[#C6FF00] transition-colors">Bodybuilding Prep</Link></li>
-              <li><Link href="#workout-plans" className="hover:text-[#C6FF00] transition-colors">Personal Training</Link></li>
-            </ul>
-          </div>
-
-          {/* Col 4: Contact & Socials */}
+          {/* Col 3: Contact & Socials */}
           <div className="flex flex-col gap-4">
             <h4 className="text-xs font-extrabold uppercase tracking-widest text-white">
               Location & Contact
@@ -87,13 +73,13 @@ export default function Footer() {
                 <MapPin className="h-4 w-4 text-[#C6FF00] shrink-0 mt-0.5" />
                 <span>Multi Power Gym, Navunda Highway Junction, Karnataka</span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <a href="tel:+918296931409" className="flex items-center gap-2.5 hover:text-[#C6FF00] transition-colors">
                 <Phone className="h-4 w-4 text-[#C6FF00] shrink-0" />
-                <span>+91 98765 43210</span>
-              </div>
+                <span className="font-mono">+91 82969 31409</span>
+              </a>
               <div className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 text-[#C6FF00] shrink-0" />
-                <span>contact@fitfusiongym.com</span>
+                <span>contact@multipowergym.com</span>
               </div>
             </div>
 
@@ -121,10 +107,10 @@ export default function Footer() {
 
         {/* Bottom copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs font-medium text-[#666666]">
-          <p>© {new Date().getFullYear()} FitFusion / Multi Power Gym. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Multi Power Gym Navunda. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             <span className="flex items-center gap-1 text-[#C6FF00]">
               <ShieldCheck className="h-3.5 w-3.5" /> 100% Verified Facility
             </span>

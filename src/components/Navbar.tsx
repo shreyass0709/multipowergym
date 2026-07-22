@@ -3,14 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Dumbbell, Menu, X, Zap } from "lucide-react";
+import { Dumbbell, Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#memberships", label: "Membership" },
   { href: "#equipment", label: "Equipment" },
-  { href: "#workout-plans", label: "Workout Plans" },
   { href: "#gallery", label: "Gallery" },
   { href: "#contact", label: "Contact" },
 ];
@@ -54,10 +53,10 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-extrabold tracking-tight text-white group-hover:text-[#C6FF00] transition-colors">
-              Fit<span className="text-[#C6FF00]">Fusion</span>
+              Multi<span className="text-[#C6FF00]">Power</span> Gym
             </span>
             <span className="text-[10px] font-bold tracking-widest text-[#A0A0A0] uppercase -mt-1">
-              Multi Power Gym Navunda
+              Navunda
             </span>
           </div>
         </Link>
@@ -88,7 +87,6 @@ export default function Navbar() {
             className="glow-btn flex items-center gap-2 px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-extrabold"
           >
             <span>Join Now</span>
-            <Zap className="h-3.5 w-3.5 fill-current" />
           </Link>
         </div>
 
@@ -129,7 +127,6 @@ export default function Navbar() {
               className="w-full text-center glow-btn py-3 rounded-xl text-xs uppercase font-extrabold flex items-center justify-center gap-2"
             >
               <span>Join Now</span>
-              <Zap className="h-3.5 w-3.5 fill-current" />
             </Link>
           </div>
         </div>
